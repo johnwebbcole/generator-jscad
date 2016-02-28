@@ -1,0 +1,25 @@
+{
+  "name": "generator-jscad",
+  "version": "0.0.1",
+  "description": "Create a jscad project",
+  "homepage": "http://github.com/johnwebbcole/generator-jscad",
+  "author": {
+    "name": "John Cole",
+    "email": "johnwebbcole@gmail.com",
+    "url": "http://github.com/johnwebbcole"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "yeoman-generator",
+    "jscad"
+  ],
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "file-exists": "^1.0.0",
+    "yeoman-generator": "^0.22.5",
+    "yosay": "^1.1.0"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "env": {
+    "es6": true
+  },
+  "globals": {
+    "CSG": true,
+    "echo": true,
+    "util": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "linebreak-style": [
+      2,
+      "unix"
+    ],
+    "quotes": [
+      2,
+      "single"
+    ],
+    "semi": [
+      2,
+      "always"
+    ]
+  }
+}
