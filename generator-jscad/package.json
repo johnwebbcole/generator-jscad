@@ -18,7 +18,6 @@
   ],
   "dependencies": {
     "chalk": "^1.1.1",
-    "file-exists": "^1.0.0",
     "yeoman-generator": "^0.22.5",
     "yosay": "^1.1.0"
   }
