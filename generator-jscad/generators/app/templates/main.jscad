@@ -6,7 +6,7 @@
 // include:js
 // endinject
 /* exported main, getParameterDefinitions */
-
+/* globals <%= name %> */
 
 function getParameterDefinitions() {
   return [{

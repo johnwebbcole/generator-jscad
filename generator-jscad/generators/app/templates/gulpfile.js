@@ -40,6 +40,6 @@ gulp.task('lib', function () {
 
 gulp.task('default', ['clean', 'lib', 'src', 'inject'], function () {
   plugins.watch(['!dist/*', '**/*.jscad'], plugins.batch(function (events, done) {
-    gulp.start('src', done);
+    gulp.start('inject', done);
   }));
 });

@@ -4,8 +4,11 @@
   },
   "globals": {
     "CSG": true,
+    "CAG": true,
     "echo": true,
-    "util": true
+    "util": true,
+    "include": true,
+    "union": true
   },
   "extends": "eslint:recommended",
   "rules": {

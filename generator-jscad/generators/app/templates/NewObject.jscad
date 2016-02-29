@@ -1,5 +1,7 @@
+/* globals <%= name %> */
+/* exported <%= name %> */
 <%= name %> = {
-  UnitCube: function (options) {
+  UnitCube: function () {
     return CSG.cube({
       center: [0, 0, 0],
       radius: [1, 1, 1]
