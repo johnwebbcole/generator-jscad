@@ -39,7 +39,7 @@ function main(params) {
       return unitAxis;
     },
     <%= name %>: function () {
-      return <%= name %>.Create('UnitCube', {});
+      return <%= name %>.Create('Sample', {});
     }
   };
 
