@@ -1,4 +1,4 @@
-// title      : <%= name %>
+// title      : <%= nameslug %>
 // author     : <%= author %>
 // license    : ISC License
 // file       : main.jscad
@@ -6,15 +6,15 @@
 // include:js
 // endinject
 /* exported main, getParameterDefinitions */
-/* globals <%= name %> */
+/* globals <%= nameslug %> */
 
 function getParameterDefinitions() {
   return [{
     name: 'show',
     type: 'choice',
-    values: ['unitCube', 'unitAxis', '<%= name %>'],
-    captions: ['unit Cube', 'unit Axis', '<%= name %>'],
-    initial: '<%= name %>',
+    values: ['unitCube', 'unitAxis', '<%= nameslug %>'],
+    captions: ['unit Cube', 'unit Axis', '<%= nameslug %>'],
+    initial: '<%= nameslug %>',
     caption: 'Show:'
   }];
 }
@@ -38,8 +38,8 @@ function main(params) {
     unitAxis: function () {
       return unitAxis;
     },
-    <%= name %>: function () {
-      return <%= name %>.Create('Sample', {});
+    <%= nameslug %>: function () {
+      return <%= nameslug %>.Create('Sample', {});
     }
   };
 

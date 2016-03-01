@@ -1,6 +1,6 @@
-/* globals <%= name %> */
-/* exported <%= name %> */
-<%= name %> = {
+/* globals <%= nameslug %> */
+/* exported <%= nameslug %> */
+<%= nameslug %> = {
   UnitCube: function () {
     return CSG.cube({
       center: [0, 0, 0],

@@ -3,6 +3,7 @@ var generators = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
 var path = require('path');
+var _ = require('lodash');
 
 module.exports = generators.Base.extend({
   constructor: function () {
@@ -34,6 +35,7 @@ module.exports = generators.Base.extend({
 
     this.prompt(prompts, function (props) {
       this.props = props;
+
       // To access props later use this.props.someOption;
       this.config.set('name', this.props.name);
       this.config.set('description', this.props.description);
@@ -62,7 +64,19 @@ module.exports = generators.Base.extend({
         this.destinationPath('package.json'), {
           name: this.props.name,
           description: this.props.description,
-          author: this.props.author
+          author: this.props.author,
+          nameslug: _.camelCase(this.props.name)
+        }
+      );
+    },
+    readme: function () {
+      this.fs.copyTpl(
+        this.templatePath('README.md'),
+        this.destinationPath('README.md'), {
+          name: this.props.name,
+          description: this.props.description,
+          author: this.props.author,
+          nameslug: _.camelCase(this.props.name)
         }
       );
     },
@@ -72,7 +86,8 @@ module.exports = generators.Base.extend({
         this.destinationPath('main.jscad'), {
           name: this.props.name,
           description: this.props.description,
-          author: this.props.author
+          author: this.props.author,
+          nameslug: _.camelCase(this.props.name)
         }
       );
     },
@@ -82,7 +97,8 @@ module.exports = generators.Base.extend({
         this.destinationPath(this.props.name + '.jscad'), {
           name: this.props.name,
           description: this.props.description,
-          author: this.props.author
+          author: this.props.author,
+          nameslug: _.camelCase(this.props.name)
         }
       );
     }
