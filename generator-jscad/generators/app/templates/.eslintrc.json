@@ -8,7 +8,8 @@
     "echo": true,
     "util": true,
     "include": true,
-    "union": true
+    "union": true,
+    "Parts": true
   },
   "extends": "eslint:recommended",
   "rules": {

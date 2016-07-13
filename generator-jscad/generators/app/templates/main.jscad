@@ -8,40 +8,32 @@
 /* exported main, getParameterDefinitions */
 /* globals <%= nameslug %> */
 
+
 function getParameterDefinitions() {
+
   return [{
-    name: 'show',
+    name: 'resolution',
     type: 'choice',
-    values: ['unitCube', 'unitAxis', '<%= nameslug %>'],
-    captions: ['unit Cube', 'unit Axis', '<%= nameslug %>'],
-    initial: '<%= nameslug %>',
-    caption: 'Show:'
+    values: [0, 1, 2, 3, 4],
+    captions: ['very low (6,16)', 'low (8,24)', 'normal (12,32)', 'high (24,64)', 'very high (48,128)'],
+    initial: 2,
+    caption: 'Resolution:'
   }];
 }
 
-
 function main(params) {
+  // echo('params', JSON.stringify(params));
+
+  var resolutions = [
+    [6, 16],
+    [8, 24],
+    [12, 32],
+    [24, 64],
+    [48, 128]
+  ];
+  CSG.defaultResolution3D = resolutions[params.resolution][0];
+  CSG.defaultResolution2D = resolutions[params.resolution][1];
   util.init(CSG);
-  echo('params', JSON.stringify(params));
 
-  var unitCube = CSG.cube({
-    center: [0, 0, 0],
-    radius: [0.5, 0.5, 100]
-  }).setColor(1, 0, 0);
-
-  var unitAxis = unitCube.union([unitCube.rotateY(90).setColor(0, 1, 0), unitCube.rotateX(90).setColor(0, 0, 1)]);
-
-  var show = {
-    unitCube: function () {
-      return unitCube;
-    },
-    unitAxis: function () {
-      return unitAxis;
-    },
-    <%= nameslug %>: function () {
-      return <%= nameslug %>.Create('Sample', {});
-    }
-  };
-
-  return show[params.show]();
+  return <%= nameslug %>.Sample();
 }
