@@ -47,9 +47,14 @@ module.exports = generators.Base.extend({
 
   writing: {
     gulpfile: function () {
-      this.fs.copy(
+      this.fs.copyTpl(
         this.templatePath('gulpfile.js'),
-        this.destinationPath('gulpfile.js')
+        this.destinationPath('gulpfile.js'), {
+          name: this.props.name,
+          description: this.props.description,
+          author: this.props.author,
+          nameslug: _.camelCase(this.props.name)
+        }
       );
     },
     eslintrc: function () {
