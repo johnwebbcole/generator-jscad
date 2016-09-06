@@ -83,17 +83,6 @@ module.exports = generators.Base.extend({
     main: function () {
       this.fs.copyTpl(
         this.templatePath('main.jscad'),
-        this.destinationPath('main.jscad'), {
-          name: this.props.name,
-          description: this.props.description,
-          author: this.props.author,
-          nameslug: _.camelCase(this.props.name)
-        }
-      );
-    },
-    newObject: function () {
-      this.fs.copyTpl(
-        this.templatePath('NewObject.jscad'),
         this.destinationPath(this.props.name + '.jscad'), {
           name: this.props.name,
           description: this.props.description,

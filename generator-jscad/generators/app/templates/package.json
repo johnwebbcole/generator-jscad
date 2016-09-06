@@ -9,13 +9,11 @@
   "author": "<%= author %>",
   "license": "ISC",
   "dependencies": {
-    "jscad-utils": "^1.0.3"
+        "jscad-utils": "^2.0.0"
   },
   "devDependencies": {
     "del": "^2.2.0",
     "gulp": "^3.9.1",
-    "gulp-batch": "^1.0.5",
-    "gulp-flatten": "^0.2.0",
     "gulp-inject": "^3.0.0",
     "gulp-jscad-files": "^1.0.0",
     "gulp-load-plugins": "^1.2.0",
