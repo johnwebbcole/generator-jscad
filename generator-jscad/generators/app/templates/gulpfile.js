@@ -14,9 +14,10 @@ gulp.task('clean', function (done) {
 gulp.task('inject', function () {
   return gulp.src('<%= nameslug %>.jscad')
     .pipe(plugins.plumber())
-    .pipe(plugins.inject(gulp.src('node_modules/**/jscad.json')
-      .pipe(plugins.plumber())
-      .pipe(plugins.jscadFiles()), {
+        .pipe(plugins.inject(
+            plugins.merge(
+                gulp.src('node_modules/**/jscad.json').pipe(plugins.jscadFiles()),
+                gulp.src(['!<%= nameslug %>.jscad', '*.jscad'])), {
         relative: true,
         starttag: '// include:js',
         endtag: '// endinject',
