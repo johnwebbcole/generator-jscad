@@ -12,12 +12,12 @@ gulp.task('clean', function (done) {
 });
 
 gulp.task('inject', function () {
-  return gulp.src('<%= nameslug %>.jscad')
+  return gulp.src('<%= name %>.jscad')
     .pipe(plugins.plumber())
-        .pipe(plugins.inject(
-            plugins.merge(
-                gulp.src('node_modules/**/jscad.json').pipe(plugins.jscadFiles()),
-                gulp.src(['!<%= nameslug %>.jscad', '*.jscad'])), {
+    .pipe(plugins.inject(
+      plugins.merge(
+        gulp.src('package.json').pipe(plugins.jscadFiles()),
+        gulp.src(['!<%= name %>.jscad', '*.jscad'])), {
         relative: true,
         starttag: '// include:js',
         endtag: '// endinject',
